@@ -1,0 +1,18 @@
+[{
+  "_id": {
+    "$oid": "65e98267abd9f9284333ca44"
+  },
+  "name": "Reliance"
+},
+{
+  "_id": {
+    "$oid": "65e982a5abd9f9284333ca45"
+  },
+  "name": "IOC"
+},
+{
+  "_id": {
+    "$oid": "65e982bdabd9f9284333ca46"
+  },
+  "name": "Tata motors"
+}]
