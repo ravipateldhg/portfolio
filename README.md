@@ -32,13 +32,13 @@ To set up the project locally, follow these steps:
 
 2. Install dependencies:
 
-  ```bash
-  npm install
+   ```bash
+   npm install
 
 3. Start the server:
 
-  ```bash
-  npm start
+   ```bash
+   npm start
 
 ## Environment Variables
 
@@ -52,13 +52,13 @@ Make sure to set the following environment variables:
 * MONGODB_DATABASE: MongoDB database name.
 Example .env file:
 
-  ```bash
-  PORT=3000
-  MONGODB_USER=myuser
-  MONGODB_PASSWORD=mypassword
-  MONGODB_HOST=localhost
-  MONGODB_PORT=27017
-  MONGODB_DATABASE=mydatabase
+   ```bash
+   PORT=3000
+   MONGODB_USER=myuser
+   MONGODB_PASSWORD=mypassword
+   MONGODB_HOST=localhost
+   MONGODB_PORT=27017
+   MONGODB_DATABASE=mydatabase
 
 ## Usage
 
