@@ -1,0 +1,48 @@
+{
+	"extends": ["eslint:recommended", "prettier", "plugin:security/recommended"],
+	"parserOptions": {
+		"ecmaVersion": 2018
+	},
+	"plugins": ["filenames", "security", "sort-requires"],
+	"env": { "es6": true, "node": true },
+	"ignorePatterns": ["apidoc/*", "public/*", "docs"],
+	"rules": {
+		"no-var": "error",
+		"no-console": ["error", { "allow": ["warn", "error", "info"] }],
+		"no-unused-vars": [
+			"error",
+			{
+				"argsIgnorePattern": "next"
+			}
+		],
+		"array-callback-return": "warn",
+		"consistent-return": "error",
+		"default-case": "error",
+		"default-case-last": "error",
+		"no-eval": "error",
+		"no-return-await": "error",
+		"eol-last": ["error", "always"],
+		"newline-before-return": "error",
+		"no-unreachable-loop": "error",
+		"no-loop-func": "error",
+		"no-multi-str": "error",
+		"no-nested-ternary": "warn",
+		"no-duplicate-imports": "error",
+		"prefer-const": "error",
+		"prefer-template": "error",
+		"prefer-rest-params": "error",
+		"no-useless-rename": "error",
+		"quotes": ["error", "single"],
+		"semi": ["error", "always"],
+		"block-spacing": "error",
+		"linebreak-style": ["error", "unix"],
+		"arrow-parens": ["error", "always"],
+		"template-curly-spacing": ["error", "never"],
+		// "filenames/match-regex": [2, "^([a-z0-9][a-z0-9]*)(-[a-z0-9]+)*$", true],
+		"filenames/no-index": 0,
+		"sort-imports": "error",
+		"sort-requires/sort-requires": "error",
+		"complexity": ["error", 15],
+		"no-control-regex": "off"
+	}
+}

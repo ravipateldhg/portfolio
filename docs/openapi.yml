@@ -1,0 +1,142 @@
+openapi: 3.0.3
+info:
+  title: Portfolio
+  version: 1.0.0
+  contact:
+    name: "Ravi Patel"
+    email: "ravipateldhg@gmail.com"
+servers:
+  - url: /api/v1
+paths:
+  /portfolio:
+    get:
+      tags:
+        - Portfolio
+      summary: Portfolio List
+      description: Get all the stocks list with it's quantity and average price
+      operationId: list
+      responses:
+        '200':
+          description: ''
+  /portfolio/returns:
+    get:
+      tags:
+        - Portfolio
+      summary: Returns
+      description: Get all the stocks with it's profit value
+      operationId: returns
+      responses:
+        '200':
+          description: ''
+  /trade:
+    get:
+      tags:
+        - Trade
+      summary: Trade list
+      description: Get list of trades
+      operationId: list1
+      responses:
+        '200':
+          description: ''
+    post:
+      tags:
+        - Trade
+      summary: AddTrade
+      description: Add new trade 
+      operationId: addtrade
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                price:
+                  type: number
+                  example: 2000
+                quantity:
+                  type: number
+                  example: 100
+                stock:
+                  type: string
+                  example: 65e982bdabd9f9284333ca46
+                  description: Stock Id
+                type:
+                  type: string
+                  enum: [BUY, SELL]
+                  example: BUY
+              required:
+                - price
+                - quantity
+                - stock
+                - type
+            examples:
+              AddTrade:
+                value:
+                  price: 2000
+                  quantity: 100
+                  stock: 65e982bdabd9f9284333ca46
+                  type: SELL
+      responses:
+        '200':
+          description: ''
+  /trade/{trade_id}:
+    delete:
+      tags:
+        - Trade
+      summary: DeleteTrade
+      description: Delete any trade
+      operationId: deletetrade
+      responses:
+        '200':
+          description: ''
+    patch:
+      tags:
+        - Trade
+      summary: EditTrade
+      description: Edit any trade price or quantity
+      operationId: edittrade
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                price:
+                  type: number
+                  example: 2000
+                quantity:
+                  type: number
+                  example: 50
+              required:
+                - price
+                - quantity
+            examples:
+              EditTrade:
+                value:
+                  price: 2000
+                  quantity: 50
+      responses:
+        '200':
+          description: ''
+    parameters:
+      - name: trade_id
+        in: path
+        required: true
+        schema:
+          type: string
+          example: 65ea049fc4328e386c5a9485
+          description: Trade Id
+  /stock:
+    get:
+      tags:
+        - Stock
+      summary: StockList
+      description: List of all stocks
+      operationId: list2
+      responses:
+        '200':
+          description: ''
+tags:
+  - name: Stock
+  - name: Portfolio
+  - name: Trade
